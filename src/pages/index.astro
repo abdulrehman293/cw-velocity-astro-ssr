@@ -1,0 +1,24 @@
+---
+// src/pages/index.astro
+import StockTicker from '../components/StockTicker.astro';
+import TickerSkeleton from '../components/TickerSkeleton.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Astro Stock Dashboard</title>
+  </head>
+  <body style="background: #030712; color: #f3f4f6; font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <header style="border-bottom: 1px solid #1f2937; padding-bottom: 1rem; margin-bottom: 2rem;">
+      <h1 style="margin: 0;">Market Dashboard</h1>
+      <p style="color: #9ca3af;">Static layout shell delivered instantly via cached HTML.</p>
+    </header>
+
+    <main>
+      <StockTicker server:defer>
+        <TickerSkeleton slot="fallback" />
+      </StockTicker>
+    </main>
+  </body>
+</html>
